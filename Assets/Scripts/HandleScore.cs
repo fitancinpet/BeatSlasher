@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class HandleScore : MonoBehaviour
 {
     public static int scoreValue;
     public static int currentScene;
     TextMesh score;
+    public SteamVR_Input_Sources hand;
+    public SteamVR_Action_Boolean menuPress;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +27,25 @@ public class HandleScore : MonoBehaviour
     {
         if (currentScene > 1)
         {
+            if (menuPress.GetStateUp(hand))
+            {
+                GoToMenuDelayed();
+            }
+
             // Update score text
             score.text = "" + scoreValue;
 
             // If we fail
             if (scoreValue < 0)
             {
-                // Manually clean up objects in our hand so they don't transfer over to next scene
+                GoToMenuDelayed();
+            }
+        }        
+    }
+
+    void GoToMenuDelayed()
+    {
+        // Manually clean up objects in our hand so they don't transfer over to next scene
                 GameObject[] cleanup = GameObject.FindGameObjectsWithTag("CleanManuallyOnSceneChange");
                 foreach (GameObject cl in cleanup)
                 {
@@ -38,8 +53,6 @@ public class HandleScore : MonoBehaviour
                 }
                 // Go to menu scene
                 Invoke("GoToMenu", 0.5f);
-            }
-        }        
     }
 
     void GoToMenu()
