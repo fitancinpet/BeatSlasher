@@ -6,6 +6,7 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - CleanManuallyOnSceneChange
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - PostProcess
   - Blue
   - Red
-  - 
+  - Menu
   - 
   - 
   - 

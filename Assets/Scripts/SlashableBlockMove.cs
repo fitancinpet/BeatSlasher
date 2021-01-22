@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class SlashableBlockMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +12,7 @@ public class SlashableBlockMove : MonoBehaviour
         // If block reaches out of bounds, despawn it
         if (transform.position.z > 0)
         {
-            HandleScore.scoreValue -= 1;
+            HandleScore.scoreValue -= 10;
             Destroy(gameObject);
         }
     }
