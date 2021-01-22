@@ -14,5 +14,9 @@ public class SlashableBlockMove : MonoBehaviour
     void Update()
     {
         transform.position += Time.deltaTime * transform.forward * 2;
+        if (transform.position.z > 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
