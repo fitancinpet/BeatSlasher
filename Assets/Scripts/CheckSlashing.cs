@@ -14,11 +14,22 @@ public class CheckSlashing : MonoBehaviour
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Menu"))
-        {            
-            HandleScore.currentScene = 2;
-            HandleScore.scoreValue = 0;
-            SceneManager.LoadScene("AlanWalkerScene", LoadSceneMode.Additive);
-            Destroy(other.gameObject);
+        {
+            if (other.gameObject.name == "InfiniteModeButton")
+            {
+                HandleScore.currentScene = 2;
+                HandleScore.scoreValue = 0;
+                SceneManager.LoadScene("AlanWalkerScene", LoadSceneMode.Additive);
+            } else if (other.gameObject.name == "LevelModeButton")
+            {
+
+            }
+            
+            GameObject[] cleanup = GameObject.FindGameObjectsWithTag("Menu");
+            foreach (GameObject cl in cleanup)
+            {
+                Destroy(cl, 0);
+            }
         }
     }
 }
