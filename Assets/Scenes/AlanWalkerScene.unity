@@ -417,8 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slashableBlocks:
-  - {fileID: 5561210473927452849, guid: f84c89b378d59f7448f3d5fb9f0e0dd8, type: 3}
-  - {fileID: 301348408672276310, guid: 6b88a774790b30d45af3b8e1db9ebf66, type: 3}
+  - {fileID: 6369436143175496961, guid: f84c89b378d59f7448f3d5fb9f0e0dd8, type: 3}
+  - {fileID: 2707783698833478399, guid: 6b88a774790b30d45af3b8e1db9ebf66, type: 3}
   spawnBounds:
   - {fileID: 21748118}
   - {fileID: 59740199}
