@@ -10,71 +10,95 @@ public class CheckSlashing : MonoBehaviour
     public GameObject failHit;
     public SteamVR_Action_Vibration hapticAction;
 
+    public GameObject getParent(Collider other)
+    {
+        if (other != null &&
+            other.gameObject != null && 
+            other.gameObject.transform != null && 
+            other.gameObject.transform.parent != null &&
+            other.gameObject.transform.parent.gameObject != null &&
+            other.gameObject.transform.parent.gameObject.GetComponent<variables>() != null &&
+            other.gameObject.transform.parent.gameObject.GetComponent<variables>().state != null)
+        {
+            return other.gameObject.transform.parent.gameObject;
+        }
+        return null;
+    }
+
     void OnTriggerEnter(Collider other)
     {
+        GameObject par = getParent(other);
         // Holding Blue Weapon
-        if (gameObject.name == "LeftWeapon")
+        if (gameObject.name == "LeftWeapon" && par != null && par.GetComponent<variables>().state == 0)
         {
             // Correct angle hit +1 score
             if (other.gameObject.name == "SuccessBLUE")
             {
-                hapticAction.Execute(0, 0.2, 150, 75, SteamVR_Input_Sources.LeftHand);
+                par.GetComponent<variables>().state = 1;
                 Instantiate(successHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue += 1;
+                hapticAction.Execute(0, 0.2f, 150, 75, SteamVR_Input_Sources.LeftHand);
             }
             // Wrong angle hit -3 score
             else if (other.gameObject.name == "FailBLUE")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 3;
             }
             // Correct angle but wrong color -5 score
             else if (other.gameObject.name == "SuccessRED")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 5;
             }
             // Wrong angle and color -8 score
             else if (other.gameObject.name == "FailRED")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 8;
             }
         }
         // Holding Red Weapon
-        else if (gameObject.name == "RightWeapon")
+        else if (gameObject.name == "RightWeapon" && par != null && par.GetComponent<variables>().state == 0)
         {
             // Correct angle hit +1 score
             if (other.gameObject.name == "SuccessRED")
             {
-                hapticAction.Execute(0, 0.2, 150, 75, SteamVR_Input_Sources.RightHand);
+                par.GetComponent<variables>().state = 1;
                 Instantiate(successHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue += 1;
+                hapticAction.Execute(0, 0.2f, 150, 75, SteamVR_Input_Sources.RightHand);
             }
             // Wrong angle hit -3 score
             else if (other.gameObject.name == "FailRED")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 3;
             }
             // Correct angle but wrong color -5 score
             else if (other.gameObject.name == "SuccessBLUE")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 5;
             }
             // Wrong angle and color -8 score
             else if (other.gameObject.name == "FailBLUE")
             {
+                par.GetComponent<variables>().state = 1;
                 Instantiate(failHit, other.gameObject.transform.position, Quaternion.identity);
-                Destroy(other.gameObject.transform.parent.gameObject);
+                Destroy(par);
                 HandleScore.scoreValue -= 8;
             }
         }
