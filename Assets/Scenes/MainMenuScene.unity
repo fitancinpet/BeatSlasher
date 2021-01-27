@@ -1790,6 +1790,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac818bb91012704faa9f873c38e30cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  successHit: {fileID: 143745588276729180, guid: bf252598348bfa043b31f322cd092f57,
+    type: 3}
+  failHit: {fileID: 6892323916288299508, guid: 48edcc68bb84297429f1d402863e0741, type: 3}
+  hapticAction:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
 --- !u!1 &1018473771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,6 +2435,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac818bb91012704faa9f873c38e30cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  successHit: {fileID: 143745588276729180, guid: bf252598348bfa043b31f322cd092f57,
+    type: 3}
+  failHit: {fileID: 6892323916288299508, guid: 48edcc68bb84297429f1d402863e0741, type: 3}
+  hapticAction:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
 --- !u!1 &1702757862
 GameObject:
   m_ObjectHideFlags: 0
