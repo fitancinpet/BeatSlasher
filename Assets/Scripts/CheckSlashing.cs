@@ -17,8 +17,7 @@ public class CheckSlashing : MonoBehaviour
             other.gameObject.transform != null && 
             other.gameObject.transform.parent != null &&
             other.gameObject.transform.parent.gameObject != null &&
-            other.gameObject.transform.parent.gameObject.GetComponent<variables>() != null &&
-            other.gameObject.transform.parent.gameObject.GetComponent<variables>().state != null)
+            other.gameObject.transform.parent.gameObject.GetComponent<variables>() != null)
         {
             return other.gameObject.transform.parent.gameObject;
         }
@@ -113,7 +112,9 @@ public class CheckSlashing : MonoBehaviour
             }
             else if (other.gameObject.name == "LevelModeButton")
             {
-
+                HandleScore.currentScene = 3;
+                HandleScore.scoreValue = 1000;
+                SceneManager.LoadScene("LevelModeScene", LoadSceneMode.Additive);
             }
             
             GameObject[] cleanup = GameObject.FindGameObjectsWithTag("Menu");

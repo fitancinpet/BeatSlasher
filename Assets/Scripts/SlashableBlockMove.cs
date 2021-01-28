@@ -8,7 +8,7 @@ public class SlashableBlockMove : MonoBehaviour
     void Update()
     {
         // Constant movement each time frame
-        transform.position += Time.deltaTime * transform.forward * 2;
+        transform.position += Time.deltaTime * transform.forward * 5;
         // If block reaches out of bounds, despawn it
         if (transform.position.z > 0)
         {
