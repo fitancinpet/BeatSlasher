@@ -29,6 +29,7 @@ public class HandleScore : MonoBehaviour
         {
             if (menuPress.GetStateUp(hand))
             {
+                currentScene = 1;
                 GoToMenuDelayed();
             }
 

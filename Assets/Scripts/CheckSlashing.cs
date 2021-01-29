@@ -113,7 +113,7 @@ public class CheckSlashing : MonoBehaviour
             else if (other.gameObject.name == "LevelModeButton")
             {
                 HandleScore.currentScene = 3;
-                HandleScore.scoreValue = 1000;
+                HandleScore.scoreValue = 5;
                 SceneManager.LoadScene("LevelModeScene", LoadSceneMode.Additive);
             }
             

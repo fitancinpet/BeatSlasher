@@ -128,8 +128,8 @@ public class SpawnLinkinParkBlocks : MonoBehaviour
     {
         timer = 0;
         indexable = 0;
-        blueSpawn = new SpawnableBlock[360];
-        redSpawn = new SpawnableBlock[360];
+        blueSpawn = new SpawnableBlock[340];
+        redSpawn = new SpawnableBlock[340];
 
         blueSpawn[0] = sp(FAR_LEFT_BOTTOM, ROT_RIGHT); redSpawn[0] = sp(FAR_RIGHT_BOTTOM, ROT_LEFT);
         blueSpawn[1] = np(); redSpawn[1] = np();
@@ -471,26 +471,6 @@ public class SpawnLinkinParkBlocks : MonoBehaviour
         blueSpawn[337] = np(); redSpawn[337] = np();
         blueSpawn[338] = np(); redSpawn[338] = np();
         blueSpawn[339] = np(); redSpawn[339] = np();
-        blueSpawn[340] = np(); redSpawn[340] = np();
-        blueSpawn[341] = np(); redSpawn[341] = np();
-        blueSpawn[342] = np(); redSpawn[342] = np();
-        blueSpawn[343] = np(); redSpawn[343] = np();
-        blueSpawn[344] = np(); redSpawn[344] = np();
-        blueSpawn[345] = np(); redSpawn[345] = np();
-        blueSpawn[346] = np(); redSpawn[346] = np();
-        blueSpawn[347] = np(); redSpawn[347] = np();
-        blueSpawn[348] = np(); redSpawn[348] = np();
-        blueSpawn[349] = np(); redSpawn[349] = np();
-        blueSpawn[350] = np(); redSpawn[350] = np();
-        blueSpawn[351] = np(); redSpawn[351] = np();
-        blueSpawn[352] = np(); redSpawn[352] = np();
-        blueSpawn[353] = np(); redSpawn[353] = np();
-        blueSpawn[354] = np(); redSpawn[354] = np();
-        blueSpawn[355] = np(); redSpawn[355] = np();
-        blueSpawn[356] = np(); redSpawn[356] = np();
-        blueSpawn[357] = np(); redSpawn[357] = np();
-        blueSpawn[358] = np(); redSpawn[358] = np();
-        blueSpawn[359] = np(); redSpawn[359] = np();
 
         started = 1;
     }
