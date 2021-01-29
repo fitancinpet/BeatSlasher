@@ -33,7 +33,7 @@ public class HandleScore : MonoBehaviour
                 GoToMenuDelayed();
             }
 
-            // Update score text
+            // Update score text 
             score.text = "" + scoreValue;
 
             // If we fail
