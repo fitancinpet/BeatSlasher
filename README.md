@@ -1,5 +1,5 @@
 # BeatSlasher
-Simple Beat Sabre like game
+Simple BeatSabre like game
 
 There are two modes:
 
